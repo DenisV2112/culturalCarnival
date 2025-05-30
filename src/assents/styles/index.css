@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+* {  /* Engloba todo dentro de la pagina*/
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+--primary-page-color: #7C358A; 
+--sub-primary-color: #8b4e97;
+--fonts-color: #FFFFFF;
+--secundary-color: #F9C105;
+--sub-secundary-color: #F49F16;
+--letter:'Lilita One', cursive;
+}
+
+body {
+    font-family: var(--letter);
+    background-color: var(--sub-primary-color);
+    background-size: cover;
+}
+
+.header {
+    display: flex;
+    background-color:var(--primary-page-color);
+    height: 80px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 100%;
+}
+
+.nav-link {
+    color: var(--fonts-color);
+    text-decoration: none; /* Elimina el subrayado por ser link*/
+}
+
+.logo {
+    font-size: 3vw;
+    font-weight: bold;
+    padding: 0 0 0 50px;
+}
+.nav-img{
+    z-index: -1;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+
+}
+
+.nav-menu {
+    display: flex;
+    margin-right: 40px;
+    list-style: none; /* Elimina los puntos de las listas*/
+}
+
+.nav-menu-item {
+    font-size: 1.3vw;
+    margin: 0 10px; /* Margenes entre los textos*/
+    text-transform: uppercase; /* Transforma las letras en mayusculas*/
+    width: max-content; /* No se acorta el texto*/
+}
+
+.nav-menu-link { 
+    padding: 8px 12px;
+    border-radius: 3px;
+}
+
+.nav-menu-link:hover {/* Efecto de sombreado*/
+    background-color: var(--sub-primary-color);
+    transition: 0.5s;
+}
+
+.nav-toggle {
+    color: white;
+    background: none;
+    border: none;
+    font-size: 30px; /* Tamaño*/
+    padding: 0 20px;
+    line-height: 60px;
+    cursor: pointer;
+
+    display: none;
+}
+.hero-img{
+    width: 100%;
+    height: 100%;
+    padding-top: 0%;
+}
+.hero-image-after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    background-image: url(../img/patron-banner.png);
+    filter: invert(0%) sepia(0%) saturate(1200%) hue-rotate(10deg) brightness(105%) contrast(105%);
+    background-repeat: repeat-x;
+    background-size: 400px auto;
+    margin-top: -4px;
+    transform: scaleY(-1);
+
+}
+.hero-text{
+    padding: 50px;
+
+}
+/* Sección Intro */
+.intro {
+    background: #ffe6cc;
+    border-radius: 10px;
+    padding: 30px 25px;
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(255, 140, 0, 0.3);
+    margin-bottom: 40px;
+}
+
+.intro h3 {
+    color: #d35400;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.intro p {
+    font-size: 1.15rem;
+    color: #6e4b25;
+}
+.section_container{
+    display: flex;
+    justify-content: space-around;
+}
+/* Contenedor de las tarjetas */
+.secciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+/* Cada tarjeta */
+.card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    width: 320px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+.card-img {
+      width: 50%;
+    position: fixed;
+    height: 50%;
+    object-fit: fill;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(255, 140, 0, 0.15);
+    z-index: -999;
+}
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(255, 140, 0, 0.3);
+}
+
+/* Enlaces de las tarjetas */
+.card a {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #d35400;
+    text-decoration: none;
+    margin-bottom: 12px;
+    transition: color 0.25s ease;
+}
+
+.card a:hover {
+    color: #a23e00;
+    text-decoration: underline;
+}
+
+/* Párrafos dentro de las tarjetas */
+.card p {
+    font-size: 0.95rem;
+    color: #5c4b2d;
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #a87c2f;
+    border-top: 1px solid #d9c49a;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+    .secciones {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 700px) {
+    .secciones {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
+
